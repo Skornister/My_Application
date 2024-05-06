@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.10.2'
+    testImplementation 'com.squareup.okhttp3:okhttp:4.12.0'
+}
+
+tasks.register('ALL', Test) {
+    useJUnitPlatform {
+    }
+}
+
+tasks.register('PositiveTest', Test) {
+    useJUnitPlatform {
+       includeTags 'positive'
+    }
+}
+
+tasks.register('NegativeTest', Test) {
+    useJUnitPlatform {
+        includeTags 'negative'
+    }
+}
