@@ -2,10 +2,19 @@ plugins {
     id 'java'
 }
 
+def junitVersion = '5.10.2',
+    gsonVersion = '2.10.1',
+    allureVersion = '2.27.0'
+
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.2'
-    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.10.2'
-    testImplementation 'com.squareup.okhttp3:okhttp:4.12.0'
+    testImplementation(
+            "org.junit.jupiter:junit-jupiter-api:$junitVersion",
+            "org.junit.jupiter:junit-jupiter-engine:$junitVersion",
+            "com.squareup.okhttp3:okhttp:4.12.0",
+            "com.google.code.gson:gson:$gsonVersion",
+
+            "io.qameta.allure:allure-rest-assured:$allureVersion"
+    )
 }
 
 tasks.register('ALL', Test) {
@@ -15,7 +24,7 @@ tasks.register('ALL', Test) {
 
 tasks.register('PositiveTest', Test) {
     useJUnitPlatform {
-       includeTags 'positive'
+        includeTags 'positive'
     }
 }
 
