@@ -1,10 +1,10 @@
 ### start all tests
-`./gradlew ALL`
+`chmod +x ./gradlew; ./gradlew ALL`
 
 ### start positive Test
-`./gradlew PositiveTest`
+`chmod +x ./gradlew; ./gradlew PositiveTest`
 
 ### start negative Test
-`./gradlew NegativeTest`
+`chmod +x ./gradlew; ./gradlew NegativeTest`
 
 > или через Android Studio > меню Gradle > Tasks > other
